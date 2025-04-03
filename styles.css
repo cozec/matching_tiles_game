@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tile {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tile.flipped {
+    transform: rotateY(180deg);
+}
+
+.tile-front,
+.tile-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tile-front {
+    background-color: #4a90e2;
+    transform: rotateY(180deg);
+}
+
+.tile-back {
+    background-color: #4a90e2;
+}
+
+.tile img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.tile.matched {
+    visibility: hidden;
+}
+
+.score {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+} 
