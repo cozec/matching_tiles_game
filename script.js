@@ -5,7 +5,7 @@ const images = [
     'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f430.svg', // rabbit
     'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f43b.svg', // bear
     'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f98a.svg', // fox
-    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f427.svg'  // penguin
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f43a.svg'  // wolf
 ];
 
 class MatchingGame {
