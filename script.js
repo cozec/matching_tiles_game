@@ -1,11 +1,11 @@
 // Game images array with cartoon image URLs
 const images = [
-    'https://img.icons8.com/color/96/000000/dog.png',
-    'https://img.icons8.com/color/96/000000/cat.png',
-    'https://img.icons8.com/color/96/000000/rabbit.png',
-    'https://img.icons8.com/color/96/000000/bear.png',
-    'https://img.icons8.com/color/96/000000/fox.png',
-    'https://img.icons8.com/color/96/000000/penguin.png'
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f436.svg', // dog
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f431.svg', // cat
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f430.svg', // rabbit
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f43b.svg', // bear
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f98a.svg', // fox
+    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f427.svg'  // penguin
 ];
 
 class MatchingGame {
