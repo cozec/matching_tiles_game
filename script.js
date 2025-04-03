@@ -12,10 +12,14 @@ class MatchingGame {
     constructor() {
         this.gameBoard = document.getElementById('gameBoard');
         this.matchesDisplay = document.getElementById('matches');
+        this.timerDisplay = document.getElementById('timer');
         this.tiles = [];
         this.flippedTiles = [];
         this.matches = 0;
         this.canFlip = true;
+        this.gameStarted = false;
+        this.timer = null;
+        this.seconds = 0;
         this.init();
     }
 
@@ -61,12 +65,34 @@ class MatchingGame {
             return;
         }
 
+        // Start the timer on the first tile flip
+        if (!this.gameStarted) {
+            this.startTimer();
+            this.gameStarted = true;
+        }
+
         tile.classList.add('flipped');
         this.flippedTiles.push(tile);
 
         if (this.flippedTiles.length === 2) {
             this.canFlip = false;
             this.checkMatch();
+        }
+    }
+
+    startTimer() {
+        this.timer = setInterval(() => {
+            this.seconds++;
+            const minutes = Math.floor(this.seconds / 60);
+            const remainingSeconds = this.seconds % 60;
+            this.timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }, 1000);
+    }
+
+    stopTimer() {
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
         }
     }
 
@@ -80,6 +106,14 @@ class MatchingGame {
             tile1.classList.add('matched');
             tile2.classList.add('matched');
             this.resetFlippedTiles();
+            
+            // Check if all tiles are matched
+            if (this.matches === images.length) {
+                this.stopTimer();
+                setTimeout(() => {
+                    alert(`Congratulations! You completed the game in ${this.timerDisplay.textContent}!`);
+                }, 500);
+            }
         } else {
             setTimeout(() => {
                 tile1.classList.remove('flipped');
