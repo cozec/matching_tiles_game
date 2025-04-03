@@ -119,7 +119,7 @@ class MatchingGame {
                 tile1.classList.remove('flipped');
                 tile2.classList.remove('flipped');
                 this.resetFlippedTiles();
-            }, 3000);
+            }, 1000);
         }
     }
 
